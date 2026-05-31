@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message for Desta, Mutek, & Anes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #050816, #081427, #102038);
+            overflow: hidden;
+            height: 100vh;
+            color: white;
+            touch-action: manipulation; /* Optimasi sentuhan di HP */
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hidden { display: none; }
+
+        #stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle { 50% { opacity: .2; } }
+
+        .title {
+            font-size: clamp(30px, 10vw, 65px);
+            font-weight: 300;
+            color: #ffd8ef;
+            text-shadow: 0 0 10px #ff8bc5, 0 0 20px #ff8bc5;
+            animation: glow 3s infinite;
+        }
+
+        @keyframes glow {
+            50% { text-shadow: 0 0 20px #ff8bc5, 0 0 40px #ff8bc5, 0 0 60px #ff8bc5; }
+        }
+
+        .subtitle {
+            margin-top: 15px;
+            font-size: clamp(14px, 4vw, 18px);
+            letter-spacing: 2px;
+            opacity: .9;
+        }
+
+        .tap {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: .7;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 50% { opacity: .2; } }
+
+        /* Garden setup */
+        .garden {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 20px;
+        }
+
+        .rose {
+            width: 40px;
+            height: 100px;
+            position: relative;
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        .rose::before {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background: #ff7db8;
+            border-radius: 50%;
+            box-shadow: -8px 0 #ff7db8, 8px 0 #ff7db8, 0 -8px #ff7db8;
+        }
+
+        .rose::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 18px;
+            width: 3px;
+            height: 70px;
+            background: #4CAF50;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Card Setup */
+        .card {
+            width: 95%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        .message {
+            font-size: clamp(15px, 4.5vw, 18px);
+            line-height: 1.6;
+            min-height: 200px;
+            white-space: pre-line;
+        }
+
+        .next {
+            margin-top: 20px;
+            padding: 12px 35px;
+            border: none;
+            background: #ff5ea8;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        /* Gallery/Photo Setup - PERBAIKAN UTAMA */
+        .gallery img {
+            width: 85%; /* Responsif HP */
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, .2);
+            animation: zoomPhoto 5s linear infinite;
+        }
+
+        @keyframes zoomPhoto {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.03); }
+        }
+
+        .caption {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        .petal {
+            position: fixed;
+            top: -20px;
+            width: 14px;
+            height: 18px;
+            background: #ffb6d5;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(45deg);
+            animation: fall linear forwards;
+            z-index: -1;
+        }
+
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+    </style>
+</head>
+<body>
+
+    <div id="stars"></div>
+
+    <audio id="bgm" loop>
+        <source src="inilagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="opening" class="page">
+        <h1 class="title">Special Message</h1>
+        <div class="subtitle">FOR DESTA, MUTEK, & ANES ✨</div>
+        <div class="tap">Touch Anywhere To Continue</div>
+        <div class="garden">
+            <div class="rose" style="animation-delay:0s"></div>
+            <div class="rose" style="animation-delay:1s"></div>
+            <div class="rose" style="animation-delay:2s"></div>
+        </div>
+    </div>
+
+    <div id="letter" class="page hidden">
+        <div class="card">
+            <div id="text" class="message"></div>
+            <button class="next" onclick="nextMessage()">NEXT</button>
+        </div>
+    </div>
+
+    <div id="gallery" class="page hidden">
+        <div class="gallery">
+            <!-- Source disesuaikan ke .jpeg sesuai GitHub kamu -->
+            <img id="photo" src="foto1.jpeg">
+        </div>
+        <div class="caption">
+            Semangat terus ya, <br><strong>Desta, Mutek, dan Anes.</strong><br>
+            Kalian pasti bisa melewati semuanya. <br> ✨
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            `Halo Desta, Mutek, dan Anes 👋\n\nBelakangan ini pasti lagi sibuk dengan urusan kuliah masing-masing. Tugas, laporan, praktikum, revisi, deadline, dan banyak hal lain yang kadang datang bersamaan.`,
+            `Desta dan Anes, sebagai anak Biologi pasti sudah cukup akrab dengan praktikum, laporan, dan berbagai kegiatan yang sering membuat hari terasa lebih panjang dari biasanya.`,
+            `Mutek, di Teknik Sipil juga pasti tidak jauh berbeda. Tugas, gambar, hitungan, proyek, dan berbagai deadline yang datang silih berganti tentu bukan hal yang ringan untuk dijalani.`,
+            `Semangat terus ya, Desta, Mutek, dan Anes. Kalian pasti bisa melewati semuanya. ✨`
+        ];
+
+        let current = 0;
+        let typing = false;
+        let started = false;
+
+        document.body.addEventListener("click", function() {
+            if (started) return;
+            started = true;
+            document.getElementById("opening").classList.add("hidden");
+            document.getElementById("letter").classList.remove("hidden");
+            document.getElementById("bgm").play().catch(() => console.log("Audio autoplay diblokir browser"));
+            typeWriter(messages[0]);
+        });
+
+        function typeWriter(text) {
+            typing = true;
+            const box = document.getElementById("text");
+            box.innerHTML = "";
+            let i = 0;
+            function write() {
+                if (i < text.length) {
+                    box.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(write, 35);
+                } else {
+                    typing = false;
+                }
+            }
+            write();
+        }
+
+        function nextMessage() {
+            if (typing) return;
+            current++;
+            if (current < messages.length) {
+                typeWriter(messages[current]);
+            } else {
+                document.getElementById("letter").classList.add("hidden");
+                document.getElementById("gallery").classList.remove("hidden");
+                startSlide();
+            }
+        }
+
+        // DISESUAIKAN DENGAN FILE .jpeg DI GITHUB KAMU
+        const photos = ["foto1.jpeg", "foto21.jpeg", "foto3.jpeg", "foto4.jpeg"];
+        let photoIndex = 0;
+
+        function startSlide() {
+            setInterval(() => {
+                photoIndex++;
+                document.getElementById("photo").src = photos[photoIndex % photos.length];
+            }, 3000);
+        }
+
+        // Star Background
+        const starContainer = document.getElementById("stars");
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            let size = Math.random() * 2;
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+            star.style.left = Math.random() * 100 + "%";
+            star.style.top = Math.random() * 100 + "%";
+            starContainer.appendChild(star);
+        }
+
+        // Petal falling
+        setInterval(() => {
+            const petal = document.createElement("div");
+            petal.className = "petal";
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 7000);
+        }, 500);
+    </script>
+</body>
+</html>
