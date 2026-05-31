@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Gift For Mutek</title>
+<title>Special Message for Desta, Mutek, & Anes</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -29,6 +28,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+padding: 20px;
 }
 
 .hidden{
@@ -50,37 +50,29 @@ animation:twinkle 3s infinite;
 }
 
 @keyframes twinkle{
-50%{
-opacity:.2;
-}
+50%{ opacity:.2; }
 }
 
 .title{
-font-size:65px;
+font-size: clamp(40px, 8vw, 65px);
 font-weight:300;
 color:#ffd8ef;
-
+text-align: center;
 text-shadow:
 0 0 10px #ff8bc5,
 0 0 20px #ff8bc5,
-0 0 40px #ff8bc5,
-0 0 70px #ff8bc5;
-
+0 0 40px #ff8bc5;
 animation:glow 3s infinite;
 }
 
 @keyframes glow{
-
 50%{
-
 text-shadow:
 0 0 20px #ff8bc5,
 0 0 40px #ff8bc5,
 0 0 70px #ff8bc5,
 0 0 100px #ff8bc5;
-
 }
-
 }
 
 .subtitle{
@@ -89,6 +81,7 @@ font-size:18px;
 letter-spacing:3px;
 opacity:.9;
 text-align:center;
+line-height: 1.5;
 }
 
 .tap{
@@ -99,25 +92,23 @@ animation:blink 1.5s infinite;
 }
 
 @keyframes blink{
-50%{
-opacity:.2;
-}
+50%{ opacity:.2; }
 }
 
 .garden{
 position:absolute;
 bottom:0;
 width:100%;
-height:250px;
+height:200px;
 display:flex;
 justify-content:center;
 align-items:flex-end;
-gap:50px;
+gap:30px;
 }
 
 .rose{
-width:80px;
-height:180px;
+width:60px;
+height:150px;
 position:relative;
 animation:sway 4s ease-in-out infinite;
 }
@@ -125,53 +116,28 @@ animation:sway 4s ease-in-out infinite;
 .rose::before{
 content:'';
 position:absolute;
-bottom:80px;
-left:20px;
-width:40px;
-height:40px;
+bottom:60px;
+left:15px;
+width:30px;
+height:30px;
 background:#ff7db8;
 border-radius:50%;
-box-shadow:
--15px 0 #ff7db8,
-15px 0 #ff7db8,
-0 -15px #ff7db8;
+box-shadow: -12px 0 #ff7db8, 12px 0 #ff7db8, 0 -12px #ff7db8;
 }
 
 .rose::after{
 content:'';
 position:absolute;
 bottom:0;
-left:38px;
-width:5px;
-height:120px;
+left:28px;
+width:4px;
+height:100px;
 background:#4CAF50;
 }
 
-.r2{
-transform:scale(1.2);
-animation-delay:1s;
-}
-
-.r3{
-transform:scale(.9);
-animation-delay:2s;
-}
-
-.r4{
-transform:scale(1.1);
-animation-delay:3s;
-}
-
 @keyframes sway{
-0%{
-transform:rotate(-3deg);
-}
-50%{
-transform:rotate(5deg);
-}
-100%{
-transform:rotate(-3deg);
-}
+0%, 100%{ transform:rotate(-3deg); }
+50%{ transform:rotate(5deg); }
 }
 
 .petal{
@@ -187,28 +153,28 @@ z-index:-1;
 }
 
 @keyframes fall{
-to{
-transform:
-translateY(110vh)
-rotate(720deg);
-}
+to{ transform: translateY(110vh) rotate(720deg); }
 }
 
 .card{
-width:90%;
+width:100%;
 max-width:700px;
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
 padding:30px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,.15);
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .message{
-font-size:20px;
-line-height:1.8;
-min-height:250px;
+font-size:18px;
+line-height:1.6;
+min-height:280px;
 white-space:pre-line;
+text-align: center;
 }
 
 .next{
@@ -219,11 +185,17 @@ background:#ff5ea8;
 color:white;
 border-radius:30px;
 cursor:pointer;
+transition: 0.3s;
+}
+
+.next:hover {
+background:#ff8bc5;
+transform: scale(1.05);
 }
 
 .gallery img{
-width:300px;
-height:400px;
+width:280px;
+height:380px;
 object-fit:cover;
 border-radius:20px;
 box-shadow:0 0 25px rgba(255,255,255,.2);
@@ -231,22 +203,17 @@ animation:zoomPhoto 5s linear infinite;
 }
 
 @keyframes zoomPhoto{
-0%{
-transform:scale(1);
-}
-100%{
-transform:scale(1.08);
-}
+0%{ transform:scale(1); }
+100%{ transform:scale(1.05); }
 }
 
 .caption{
-margin-top:25px;
-font-size:22px;
+margin-top:20px;
+font-size:18px;
 text-align:center;
-padding:0 20px;
 max-width:700px;
+line-height: 1.5;
 }
-
 </style>
 </head>
 
@@ -259,233 +226,143 @@ max-width:700px;
 </audio>
 
 <!-- OPENING -->
-
 <div id="opening" class="page">
-
-<h1 class="title">Special Gift</h1>
-
-<div class="subtitle">
-FOR MY BEST FRIEND
-<br>
-MUTEK ✨
-</div>
-
-<div class="tap">
-Touch Anywhere To Continue
-</div>
-
-<div class="garden">
-
-<div class="rose r1"></div>
-<div class="rose r2"></div>
-<div class="rose r3"></div>
-<div class="rose r4"></div>
-
-</div>
-
+    <h1 class="title">Special Message</h1>
+    <div class="subtitle">
+        FOR DESTA, MUTEK, & ANES ✨
+    </div>
+    <div class="tap">Touch Anywhere To Continue</div>
+    <div class="garden">
+        <div class="rose" style="animation-delay:0s"></div>
+        <div class="rose" style="animation-delay:1s"></div>
+        <div class="rose" style="animation-delay:2s"></div>
+    </div>
 </div>
 
 <!-- LETTER -->
-
 <div id="letter" class="page hidden">
-
-<div class="card">
-
-<div id="text" class="message"></div>
-
-<button class="next" onclick="nextMessage()">
-NEXT
-</button>
-
-</div>
-
+    <div class="card">
+        <div id="text" class="message"></div>
+        <button class="next" onclick="nextMessage()">NEXT</button>
+    </div>
 </div>
 
 <!-- PHOTO -->
-
 <div id="gallery" class="page hidden">
-
-<img id="photo" src="foto1.jpg">
-
-<div class="caption">
-
-Untuk Mutek,
-
-Terima kasih sudah menjadi teman terbaik.
-
-Terima kasih untuk semua cerita,
-dukungan, tawa, dan kenangan yang telah kita lalui bersama.
-
-Semoga semua hal baik selalu menyertaimu.
-
-✨
-
-</div>
-
+    <img id="photo" src="foto1.jpg">
+    <div class="caption">
+        Semangat terus ya, <br><strong>Desta, Mutek, dan Anes.</strong><br>
+        Kalian pasti bisa melewati semuanya. <br> ✨
+    </div>
 </div>
 
 <script>
-
-const messages=[
-
-`Hai Mutek,
-
-Ada sesuatu yang ingin aku sampaikan.`,
-
-`Terima kasih karena selama ini sudah menjadi teman terbaik.`,
-
-`Tidak semua orang beruntung memiliki seseorang yang selalu ada saat dibutuhkan.`,
-
-`Terima kasih untuk semua cerita,
-dukungan, tawa, dan kenangan yang sudah kita lalui bersama.`,
-
-`Aku sangat menghargai semua kebaikan yang pernah kamu berikan.`,
-
-`Semoga semua impian,
-harapan dan cita-citamu bisa tercapai satu per satu.`,
-
-`Tetaplah menjadi pribadi yang baik,
-dan teruslah bersinar dengan caramu sendiri.`,
-
-`Terima kasih sudah menjadi sahabat terbaik. ✨`
-
+const messages = [
+    `Halo Desta, Mutek, dan Anes 👋\n\nBelakangan ini pasti lagi sibuk dengan urusan kuliah masing-masing. Tugas, laporan, praktikum, revisi, deadline, dan banyak hal lain yang kadang datang bersamaan.`,
+    
+    `Desta dan Anes, sebagai anak Biologi pasti sudah cukup akrab dengan praktikum, laporan, dan berbagai kegiatan yang sering membuat hari terasa lebih panjang dari biasanya.`,
+    
+    `Mutek, di Teknik Sipil juga pasti tidak jauh berbeda. Tugas, gambar, hitungan, proyek, dan berbagai deadline yang datang silih berganti tentu bukan hal yang ringan untuk dijalani.`,
+    
+    `Kadang ada hari yang berjalan lancar, tapi ada juga hari yang rasanya melelahkan dan membuat semangat sedikit turun.`,
+    
+    `Kalau sedang berada di titik itu, tidak apa-apa untuk beristirahat sebentar. Tidak harus selalu kuat setiap saat, dan tidak harus memaksakan diri terus-menerus.`,
+    
+    `Tidak semua proses berjalan sesuai rencana, dan tidak semua hasil datang secepat yang diharapkan.`,
+    
+    `Tapi setiap tugas yang diselesaikan, setiap laporan yang dikumpulkan, dan setiap tantangan yang berhasil dilewati tetap merupakan kemajuan.`,
+    
+    `Jangan terlalu sering membandingkan diri dengan orang lain. Setiap orang punya jalan dan waktunya masing-masing. Fokus saja pada langkah yang sedang dijalani sekarang.`,
+    
+    `Semoga semua usaha yang sedang kalian lakukan bisa memberikan hasil yang sepadan.`,
+    
+    `Semoga urusan kuliah dipermudah, diberikan kesehatan, dan tetap punya semangat untuk menjalani hari-hari yang sibuk ini.`,
+    
+    `Terus jalani prosesnya satu langkah demi satu langkah. Tidak perlu terburu-buru, yang penting tetap bergerak maju.`,
+    
+    `Semangat terus ya, Desta, Mutek, dan Anes. Kalian pasti bisa melewati semuanya. ✨`
 ];
 
 let current=0;
 let typing=false;
 let started=false;
 
-document.body.addEventListener("click",function(){
-
-if(started) return;
-
-started=true;
-
-document.getElementById("opening").classList.add("hidden");
-
-document.getElementById("letter").classList.remove("hidden");
-
-document.getElementById("bgm").play();
-
-typeWriter(messages[0]);
-
+document.body.addEventListener("click", function(){
+    if(started) return;
+    started=true;
+    document.getElementById("opening").classList.add("hidden");
+    document.getElementById("letter").classList.remove("hidden");
+    document.getElementById("bgm").play();
+    typeWriter(messages[0]);
 });
 
 function typeWriter(text){
-
-typing=true;
-
-const box=document.getElementById("text");
-
-box.innerHTML="";
-
-let i=0;
-
-function write(){
-
-if(i<text.length){
-
-box.innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(write,35);
-
-}else{
-
-typing=false;
-
-}
-
-}
-
-write();
-
+    typing=true;
+    const box=document.getElementById("text");
+    box.innerHTML="";
+    let i=0;
+    function write(){
+        if(i<text.length){
+            box.innerHTML+=text.charAt(i);
+            i++;
+            setTimeout(write, 30);
+        }else{
+            typing=false;
+        }
+    }
+    write();
 }
 
 function nextMessage(){
-
-if(typing) return;
-
-current++;
-
-if(current<messages.length){
-
-typeWriter(messages[current]);
-
-}else{
-
-document.getElementById("letter").classList.add("hidden");
-
-document.getElementById("gallery").classList.remove("hidden");
-
-startSlide();
-
+    if(typing) return;
+    current++;
+    if(current<messages.length){
+        typeWriter(messages[current]);
+    }else{
+        document.getElementById("letter").classList.add("hidden");
+        document.getElementById("gallery").classList.remove("hidden");
+        startSlide();
+    }
 }
 
-}
-
+// Sesuaikan nama file foto kalian di sini
 const photos=[
-"foto1.jpeg",
-"foto21.jpeg",
-"foto3.jpeg",
-"foto4.jpeg"
+    "foto1.jpeg",
+    "foto2.jpeg",
+    "foto3.jpeg",
+    "foto4.jpeg"
 ];
 
 let photoIndex=0;
-
 function startSlide(){
-
-setInterval(()=>{
-
-photoIndex++;
-
-document.getElementById("photo").src=
-photos[photoIndex%photos.length];
-
-},3000);
-
+    setInterval(()=>{
+        photoIndex++;
+        document.getElementById("photo").src=photos[photoIndex % photos.length];
+    }, 3000);
 }
 
-for(let i=0;i<180;i++){
-
-let star=document.createElement("div");
-
-star.classList.add("star");
-
-let size=Math.random()*3;
-
-star.style.width=size+"px";
-star.style.height=size+"px";
-
-star.style.left=Math.random()*100+"%";
-star.style.top=Math.random()*100+"%";
-
-star.style.animationDelay=Math.random()*3+"s";
-
-document.getElementById("stars").appendChild(star);
-
+// Stars background
+for(let i=0;i<150;i++){
+    let star=document.createElement("div");
+    star.classList.add("star");
+    let size=Math.random()*3;
+    star.style.width=size+"px";
+    star.style.height=size+"px";
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+    star.style.animationDelay=Math.random()*3+"s";
+    document.getElementById("stars").appendChild(star);
 }
 
+// Petal falling animation
 setInterval(()=>{
-
-const petal=document.createElement("div");
-
-petal.className="petal";
-
-petal.style.left=Math.random()*100+"vw";
-
-petal.style.animationDuration=
-(Math.random()*5+5)+"s";
-
-document.body.appendChild(petal);
-
-setTimeout(()=>{
-petal.remove();
-},10000);
-
-},200);
-
+    const petal=document.createElement("div");
+    petal.className="petal";
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(Math.random()*5+5)+"s";
+    document.body.appendChild(petal);
+    setTimeout(()=>{ petal.remove(); }, 10000);
+}, 300);
 </script>
 
 </body>
